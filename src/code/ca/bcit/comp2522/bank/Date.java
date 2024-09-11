@@ -93,9 +93,9 @@ public class Date {
     public Date (final int day, final int month, final int year) {
         validateDate(day, month, year);
 
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        this.day    = day;
+        this.month  = month;
+        this.year   = year;
     }
 
     /**

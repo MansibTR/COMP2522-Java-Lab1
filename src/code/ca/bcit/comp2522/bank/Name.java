@@ -32,8 +32,8 @@ public class Name {
         validateName(first);
         validateName(last);
 
-        this.first = first;
-        this.last = last;
+        this.first  = first;
+        this.last   = last;
     }
 
     /**

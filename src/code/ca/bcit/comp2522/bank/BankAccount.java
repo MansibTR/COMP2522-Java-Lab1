@@ -45,12 +45,12 @@ public class BankAccount {
 
         validateClientID(clientID);
 
-        this.clientID = clientID;
-        this.accountOpened = accountOpened;
-        this.accountClosed = accountClosed;
-        this.client = client;
-        this.balanceUSD = balanceUSD;
-        this.pin = pin;
+        this.clientID       = clientID;
+        this.accountOpened  = accountOpened;
+        this.accountClosed  = accountClosed;
+        this.client         = client;
+        this.balanceUSD     = balanceUSD;
+        this.pin            = pin;
     }
 
     /**

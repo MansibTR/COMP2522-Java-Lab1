@@ -40,7 +40,7 @@ public class BankClient extends Person {
         super(name, birthDate, deathDate);
         validateClientID(clientID);
         this.signupDate = signupDate;
-        this.clientID = clientID;
+        this.clientID   = clientID;
     }
 
     /**

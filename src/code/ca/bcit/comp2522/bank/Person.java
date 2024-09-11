@@ -31,9 +31,9 @@ public class Person {
      */
     public Person(final Name name, final Date birthDate, final Date deathDate) {
         validatePerson(name, birthDate);
-        this.name = name;
-        this.birthDate = birthDate;
-        this.deathDate = deathDate;
+        this.name       = name;
+        this.birthDate  = birthDate;
+        this.deathDate  = deathDate;
     }
 
     /**
