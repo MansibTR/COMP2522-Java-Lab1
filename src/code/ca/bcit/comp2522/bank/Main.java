@@ -55,7 +55,7 @@ public class Main {
         System.out.println("Name Reversed: " + NAME_1.getReverseName());
         System.out.println("Details: " + person1.getDetails());
 
-        BankClient client1 = new BankClient(person1, ACC_OPEN_1, ID_1);
+        BankClient client1 = new BankClient(NAME_1, BIRTH_1, DEATH_1, ACC_OPEN_1, ID_1);
 
         System.out.println("Bank Client details: " + client1.getDetails());
 
@@ -74,7 +74,7 @@ public class Main {
         System.out.println("Name Reversed: " + NAME_2.getReverseName());
         System.out.println("Details: " + person2.getDetails());
 
-        BankClient client2 = new BankClient(person2, ACC_OPEN_2, ID_2);
+        BankClient client2 = new BankClient(NAME_2, BIRTH_2, DEATH_2, ACC_OPEN_2, ID_2);
 
         System.out.println("Bank Client details: " + client2.getDetails());
 
@@ -94,7 +94,7 @@ public class Main {
         System.out.println("Name Reversed: " + NAME_3.getReverseName());
         System.out.println("Details: " + person3.getDetails());
 
-        BankClient client3 = new BankClient(person3, ACC_OPEN_3, ID_3);
+        BankClient client3 = new BankClient(NAME_3, BIRTH_3, DEATH_3, ACC_OPEN_3, ID_3);
 
         System.out.println("Bank Client details: " + client3.getDetails());
 
@@ -114,7 +114,7 @@ public class Main {
         System.out.println("Name Reversed: " + NAME_4.getReverseName());
         System.out.println("Details: " + person4.getDetails());
 
-        BankClient client4 = new BankClient(person4, ACC_OPEN_4, ID_4);
+        BankClient client4 = new BankClient(NAME_4, BIRTH_4, ACC_OPEN_4, ID_4);
 
         System.out.println("Bank Client details: " + client4.getDetails());
 

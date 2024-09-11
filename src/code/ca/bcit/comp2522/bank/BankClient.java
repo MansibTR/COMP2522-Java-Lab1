@@ -30,16 +30,29 @@ public class BankClient extends Person {
     /**
      * Constructor method for BankClient class.
      *
-     * @param person     Person details for the bank client
+     * @param name       Name of the person
+     * @param birthDate  Birthdate of the person
+     * @param deathDate  Death date of the person (can be null if still alive)
      * @param signupDate Signup date for the bank client
      * @param clientID   Client ID (must be 6 or 7 digits)
      */
-    public BankClient(final Person person, final Date signupDate, final String clientID) {
-
-        super(person.getName(), person.getBirthDate(), person.getDeathDate());
+    public BankClient(final Name name, final Date birthDate, final Date deathDate, final Date signupDate, final String clientID) {
+        super(name, birthDate, deathDate);
         validateClientID(clientID);
         this.signupDate = signupDate;
         this.clientID = clientID;
+    }
+
+    /**
+     * Overloaded constructor method for living BankClients.
+     *
+     * @param name       Name of the person
+     * @param birthDate  Birthdate of the person
+     * @param signupDate Signup date for the bank client
+     * @param clientID   Client ID (must be 6 or 7 digits)
+     */
+    public BankClient(final Name name, final Date birthDate, final Date signupDate, final String clientID) {
+        this(name, birthDate, null, signupDate,clientID);
     }
 
     /**
