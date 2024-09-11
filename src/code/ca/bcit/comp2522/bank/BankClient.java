@@ -30,6 +30,7 @@ public class BankClient extends Person {
     /**
      * Constructor method for BankClient class.
      *
+     * @param person     Person details for the bank client
      * @param signupDate Signup date for the bank client
      * @param clientID   Client ID (must be 6 or 7 digits)
      */
