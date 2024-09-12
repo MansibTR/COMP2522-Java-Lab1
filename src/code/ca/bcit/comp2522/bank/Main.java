@@ -1,5 +1,17 @@
 package ca.bcit.comp2522.bank;
 
+/**
+ * This is the driver class for the application.
+ *
+ * <p>
+ * This class demonstrates the creation of person and client instances, the manipulation of their
+ * attributes, and the simulation of typical bank account operations.
+ * </p>
+ *
+ * @author Mansib Talukder
+ * @version 2024
+ */
+
 public class Main {
 
     // Constants for Albert Einstein
@@ -42,8 +54,11 @@ public class Main {
     private static final int    PIN_4       = 1954;
     private static final double BALANCE_4   = 3000;
     private static final double WITHDRAW_4  = 500;
-
-
+    
+    /**
+     * Drives the program.
+     * @param args Command-line arguments (unused)
+     */
     public static void main(final String[] args){
 
         // Details of Albert Einstein
