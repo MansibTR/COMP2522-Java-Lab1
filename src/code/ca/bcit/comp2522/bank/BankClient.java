@@ -21,7 +21,7 @@ package ca.bcit.comp2522.bank;
  * @version 2024
  */
 public class BankClient extends Person {
-    private final Date signupDate;
+    private final Date   signupDate;
     private final String clientID;
 
     private static final int ID_MIN_LENGTH = 6;

@@ -19,36 +19,36 @@ public class Date {
     private final int year;
 
     // Days of months
-    private static final int FULL_MONTH = 31;
-    private static final int THIRTY_DAY_MONTH = 30;
-    private static final int FEB_LEAP = 29;
-    private static final int FEB_NON_LEAP = 28;
+    private static final int FULL_MONTH         = 31;
+    private static final int THIRTY_DAY_MONTH   = 30;
+    private static final int FEB_LEAP           = 29;
+    private static final int FEB_NON_LEAP       = 28;
 
-    private static final int MIN_YEAR = 1800;
-    private static final int MIN_DAY = 1;
-    private static final int CURRENT_YEAR = 2024;
-    private static final int CENTURY_2000 = 2000;
-    private static final int CENTURY_1900 = 1900;
+    private static final int MIN_YEAR       = 1800;
+    private static final int MIN_DAY        = 1;
+    private static final int CURRENT_YEAR   = 2024;
+    private static final int CENTURY_2000   = 2000;
+    private static final int CENTURY_1900   = 1900;
 
     // Months
-    private static final int JANUARY = 1;
-    private static final int FEBRUARY = 2;
-    private static final int MARCH = 3;
-    private static final int APRIL = 4;
-    private static final int MAY = 5;
-    private static final int JUNE = 6;
-    private static final int JULY = 7;
-    private static final int AUGUST = 8;
-    private static final int SEPTEMBER = 9;
-    private static final int OCTOBER = 10;
-    private static final int NOVEMBER = 11;
-    private static final int DECEMBER = 12;
+    private static final int JANUARY    = 1;
+    private static final int FEBRUARY   = 2;
+    private static final int MARCH      = 3;
+    private static final int APRIL      = 4;
+    private static final int MAY        = 5;
+    private static final int JUNE       = 6;
+    private static final int JULY       = 7;
+    private static final int AUGUST     = 8;
+    private static final int SEPTEMBER  = 9;
+    private static final int OCTOBER    = 10;
+    private static final int NOVEMBER   = 11;
+    private static final int DECEMBER   = 12;
 
     // Leap year divisors
-    private static final int FOUR_YEARS = 4;
-    private static final int HUNDRED_YEARS = 100;
+    private static final int FOUR_YEARS         = 4;
+    private static final int HUNDRED_YEARS      = 100;
     private static final int FOUR_HUNDRED_YEARS = 400;
-    private static final int ZERO_REMAINDER = 0;
+    private static final int ZERO_REMAINDER     = 0;
     private static final int FIRST_DOUBLE_DIGIT = 10;
 
     // Month Codes
@@ -79,10 +79,10 @@ public class Date {
     private static final int THU = 5;
     private static final int FRI = 6;
 
-    private static final int MODULO_DIVISOR = 7;
-    private static final int TWELVES_DIVISOR = 12;
-    private static final int FOURS_DIVISOR = 4;
-    private static final int LEAP_YEAR_ADJUSTMENT = 6;
+    private static final int MODULO_DIVISOR         = 7;
+    private static final int TWELVES_DIVISOR        = 12;
+    private static final int FOURS_DIVISOR          = 4;
+    private static final int LEAP_YEAR_ADJUSTMENT   = 6;
 
     /**
      * Constructor method for Date class.

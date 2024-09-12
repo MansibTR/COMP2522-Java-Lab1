@@ -3,45 +3,45 @@ package ca.bcit.comp2522.bank;
 public class Main {
 
     // Constants for Albert Einstein
-    private static final Name NAME_1 = new Name ("Albert", "Einstein");
-    private static final Date BIRTH_1 = new Date (14, 3, 1879);
-    private static final Date DEATH_1 = new Date (18, 4, 1955);
-    private static final String ID_1 = "abc123";
-    private static final Date ACC_OPEN_1 = new Date(1, 1, 1900);
-    private static final Date ACC_CLOSE_1 = new Date(14, 10, 1950);
-    private static final int PIN_1 = 3141;
-    private static final double BALANCE_1 = 1000;
-    private static final double WITHDRAW_1 = 100;
+    private static final Name   NAME_1      = new Name ("Albert", "Einstein");
+    private static final Date   BIRTH_1     = new Date (14, 3, 1879);
+    private static final Date   DEATH_1     = new Date (18, 4, 1955);
+    private static final String ID_1        = "abc123";
+    private static final Date   ACC_OPEN_1  = new Date(1, 1, 1900);
+    private static final Date   ACC_CLOSE_1 = new Date(14, 10, 1950);
+    private static final int    PIN_1       = 3141;
+    private static final double BALANCE_1   = 1000;
+    private static final double WITHDRAW_1  = 100;
 
     // Constants for Nelson Mandela
-    private static final Name NAME_2 = new Name ("Nelson", "Mandela");
-    private static final Date BIRTH_2 = new Date (18, 7, 1918);
-    private static final Date DEATH_2 = new Date (5, 12, 2013);
-    private static final String ID_2 = "654321";
-    private static final Date ACC_OPEN_2 = new Date(10, 5, 1994);
-    private static final int PIN_2 = 4664;
-    private static final double BALANCE_2 = 2000;
-    private static final double WITHDRAW_2 = 200;
+    private static final Name   NAME_2      = new Name ("Nelson", "Mandela");
+    private static final Date   BIRTH_2     = new Date (18, 7, 1918);
+    private static final Date   DEATH_2     = new Date (5, 12, 2013);
+    private static final String ID_2        = "654321";
+    private static final Date   ACC_OPEN_2  = new Date(10, 5, 1994);
+    private static final int    PIN_2       = 4664;
+    private static final double BALANCE_2   = 2000;
+    private static final double WITHDRAW_2  = 200;
 
     // Constants for Frida Kahlo
-    private static final Name NAME_3 = new Name ("Frida", "Kahlo");
-    private static final Date BIRTH_3 = new Date (6, 7, 1907);
-    private static final Date DEATH_3 = new Date (6, 7, 1907);
-    private static final String ID_3 = "frd123";
-    private static final Date ACC_OPEN_3 = new Date(1, 1, 1940);
-    private static final Date ACC_CLOSE_3 = new Date(13, 7, 1954);
-    private static final int PIN_3 = 1907;
-    private static final double BALANCE_3 = 500;
-    private static final double WITHDRAW_3 = 50;
+    private static final Name   NAME_3      = new Name ("Frida", "Kahlo");
+    private static final Date   BIRTH_3     = new Date (6, 7, 1907);
+    private static final Date   DEATH_3     = new Date (6, 7, 1907);
+    private static final String ID_3        = "frd123";
+    private static final Date   ACC_OPEN_3  = new Date(1, 1, 1940);
+    private static final Date   ACC_CLOSE_3 = new Date(13, 7, 1954);
+    private static final int    PIN_3       = 1907;
+    private static final double BALANCE_3   = 500;
+    private static final double WITHDRAW_3  = 50;
 
     // Constants for Jackie Chan
-    private static final Name NAME_4 = new Name ("Jackie", "Chan");
-    private static final Date BIRTH_4= new Date (7, 4, 1954);
-    private static final String ID_4 = "chan789";
-    private static final Date ACC_OPEN_4 = new Date(1, 10, 1980);
-    private static final int PIN_4 = 1954;
-    private static final double BALANCE_4 = 3000;
-    private static final double WITHDRAW_4 = 500;
+    private static final Name   NAME_4      = new Name ("Jackie", "Chan");
+    private static final Date   BIRTH_4     = new Date (7, 4, 1954);
+    private static final String ID_4        = "chan789";
+    private static final Date   ACC_OPEN_4  = new Date(1, 10, 1980);
+    private static final int    PIN_4       = 1954;
+    private static final double BALANCE_4   = 3000;
+    private static final double WITHDRAW_4  = 500;
 
 
     public static void main(final String[] args){

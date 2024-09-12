@@ -18,15 +18,15 @@ package ca.bcit.comp2522.bank;
  *
  */
 public class BankAccount {
-    private final String clientID;
-    private final Date accountOpened;
-    private final Date accountClosed;
-    private final Person client;
-    private double balanceUSD;
-    private final int pin;
+    private final String    clientID;
+    private final Date      accountOpened;
+    private final Date      accountClosed;
+    private final Person    client;
+    private double          balanceUSD;
+    private final int       pin;
 
-    private static final int ACC_MIN_NUMBER = 6;
-    private static final int ACC_MAX_NUMBER = 7;
+    private static final int    ACC_MIN_NUMBER = 6;
+    private static final int    ACC_MAX_NUMBER = 7;
     private static final double ZERO_BALANCE = 0;
 
     /**
