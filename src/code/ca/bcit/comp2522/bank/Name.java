@@ -16,13 +16,14 @@ package ca.bcit.comp2522.bank;
  * @version 2024
  */
 public class Name {
-    private final String first;
-    private final String last;
-
+    
     private static final int MAX_CHARS = 45;
     private static final int FIRST_CHAR = 0;
     private static final int SECOND_CHAR = 1;
-
+    
+    private final String first;
+    private final String last;
+    
     /**
      * Constructor method for Name class.
      * @param first First Name

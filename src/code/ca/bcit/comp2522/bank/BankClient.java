@@ -21,12 +21,13 @@ package ca.bcit.comp2522.bank;
  * @version 2024
  */
 public class BankClient extends Person {
-    private final Date   signupDate;
-    private final String clientID;
 
     private static final int ID_MIN_LENGTH = 6;
     private static final int ID_MAX_LENGTH = 7;
-
+    
+    private final Date   signupDate;
+    private final String clientID;
+    
     /**
      * Constructor method for BankClient class.
      *

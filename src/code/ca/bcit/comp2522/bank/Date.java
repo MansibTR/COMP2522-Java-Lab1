@@ -14,9 +14,6 @@ package ca.bcit.comp2522.bank;
  * @version 2024
  */
 public class Date {
-    private final int day;
-    private final int month;
-    private final int year;
 
     // Days of months
     private static final int FULL_MONTH         = 31;
@@ -83,7 +80,11 @@ public class Date {
     private static final int TWELVES_DIVISOR        = 12;
     private static final int FOURS_DIVISOR          = 4;
     private static final int LEAP_YEAR_ADJUSTMENT   = 6;
-
+    
+    private final int day;
+    private final int month;
+    private final int year;
+    
     /**
      * Constructor method for Date class.
      * @param day   Day

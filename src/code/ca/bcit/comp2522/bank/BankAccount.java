@@ -18,17 +18,18 @@ package ca.bcit.comp2522.bank;
  *
  */
 public class BankAccount {
+
+    private static final int    ACC_MIN_NUMBER = 6;
+    private static final int    ACC_MAX_NUMBER = 7;
+    private static final double ZERO_BALANCE   = 0;
+    
     private final String    clientID;
     private final Date      accountOpened;
     private final Date      accountClosed;
     private final Person    client;
     private double          balanceUSD;
     private final int       pin;
-
-    private static final int    ACC_MIN_NUMBER = 6;
-    private static final int    ACC_MAX_NUMBER = 7;
-    private static final double ZERO_BALANCE = 0;
-
+    
     /**
      * Constructor method for BankAccount class.
      *
@@ -40,8 +41,8 @@ public class BankAccount {
      * @param pin The pin for the account.
      */
     public BankAccount(final String clientID, final Date accountOpened,
-                       final Date accountClosed, final Person client, final double balanceUSD,
-                       final int pin) {
+                       final Date accountClosed, final Person client,
+                       final double balanceUSD, final int pin) {
 
         validateClientID(clientID);
 
@@ -62,7 +63,8 @@ public class BankAccount {
      * @param pin The pin for the account.
      */
     public BankAccount(final String clientID, final Date accountOpened,
-                       final Person client, final double balanceUSD, final int pin) {
+                       final Person client, final double balanceUSD, final int pin)
+    {
         this(clientID, accountOpened, null, client, balanceUSD, pin);
     }
 
