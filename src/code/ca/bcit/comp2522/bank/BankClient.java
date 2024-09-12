@@ -14,7 +14,7 @@ package ca.bcit.comp2522.bank;
  * </p>
  *
  * <p>
- * The client ID is a string that should be either 6 or 7 digits long.
+ * The client ID is a string that should be either {@value ID_MIN_LENGTH} or {@value ID_MAX_LENGTH} digits long.
  * </p>
  *
  * @author Mansib Talukder
@@ -35,7 +35,7 @@ public class BankClient extends Person {
      * @param birthDate  Birthdate of the person
      * @param deathDate  Death date of the person (can be null if still alive)
      * @param signupDate Signup date for the bank client
-     * @param clientID   Client ID (must be 6 or 7 digits)
+     * @param clientID   Client ID (must be {@value ID_MIN_LENGTH} or {@value ID_MAX_LENGTH} digits)
      */
     public BankClient(final Name name, final Date birthDate, final Date deathDate, final Date signupDate, final String clientID) {
         super(name, birthDate, deathDate);
@@ -50,14 +50,32 @@ public class BankClient extends Person {
      * @param name       Name of the person
      * @param birthDate  Birthdate of the person
      * @param signupDate Signup date for the bank client
-     * @param clientID   Client ID (must be 6 or 7 digits)
+     * @param clientID   Client ID (must be {@value ID_MIN_LENGTH} or {@value ID_MAX_LENGTH} digits)
      */
     public BankClient(final Name name, final Date birthDate, final Date signupDate, final String clientID) {
         this(name, birthDate, null, signupDate,clientID);
     }
+    
+    
+    /**
+     * Getter method for Signup Date
+     * @return Signup Date
+     */
+    public Date getSignupDate() {
+        return this.signupDate;
+    }
+    
+    /**
+     * Getter method for ClientID
+     * @return ClientID
+     */
+    public String getClientID() {
+        return this.clientID;
+    }
 
     /**
-     * This method validates the client ID to ensure it is 6 or 7 digits.
+     * This method validates the client ID to ensure
+     * it is {@value ID_MIN_LENGTH} or {@value ID_MAX_LENGTH} digits.
      *
      * @param clientID The client ID to validate.
      */
@@ -66,7 +84,8 @@ public class BankClient extends Person {
             clientID.isBlank() ||
             clientID.length() < ID_MIN_LENGTH ||
             clientID.length() > ID_MAX_LENGTH) {
-            throw new IllegalArgumentException("Client ID must be 6 or 7 digits: " + clientID);
+            throw new IllegalArgumentException("Client ID must be" + ID_MIN_LENGTH +
+                                                       "or" + ID_MAX_LENGTH + "digits: " + clientID);
         }
     }
 
@@ -77,14 +96,17 @@ public class BankClient extends Person {
      */
     @Override
     public String getDetails() {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb;
+        final String        details;
+        
+        sb = new StringBuilder();
 
-        sb.append(getName().getFullName());
+        sb.append(this.getName().getFullName());
         sb.append(" client #");
-        sb.append(clientID);
+        sb.append(this.getClientID());
         sb.append(" ");
 
-        if (getDeathDate() == null) {
+        if (isAlive()) {
             sb.append("(alive) ");
         } else {
             sb.append("(died ");
@@ -95,28 +117,14 @@ public class BankClient extends Person {
         }
 
         sb.append("joined the bank on ");
-        sb.append(signupDate.getDayOfTheWeek());
+        sb.append(getSignupDate().getDayOfTheWeek());
         sb.append(", ");
-        sb.append(signupDate);
+        sb.append(getSignupDate());
         sb.append(".");
 
-        return sb.toString();
-    }
-
-    /**
-     * Getter method for Signup Date
-     * @return Signup Date
-     */
-    public Date getSignupDate() {
-        return signupDate;
-    }
-
-    /**
-     * Getter method for ClientID
-     * @return ClientID
-     */
-    public String getClientID() {
-        return clientID;
+        details = sb.toString();
+        
+        return details;
     }
 }
 

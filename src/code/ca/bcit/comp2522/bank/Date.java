@@ -42,7 +42,7 @@ public class Date {
     private static final int DECEMBER   = 12;
 
     // Leap year divisors
-    private static final int FOUR_YEARS         = 4;
+    private static final int LEAP_YEAR_DIVISOR  = 4;
     private static final int HUNDRED_YEARS      = 100;
     private static final int FOUR_HUNDRED_YEARS = 400;
     private static final int ZERO_REMAINDER     = 0;
@@ -98,11 +98,35 @@ public class Date {
         this.month  = month;
         this.year   = year;
     }
+    
+    /**
+     * Getter method for day.
+     * @return Day
+     */
+    public int getDay() {
+        return this.day;
+    }
+    
+    /**
+     * Getter method for month.
+     * @return Month
+     */
+    public int getMonth() {
+        return this.month;
+    }
+    
+    /**
+     * Getter method for Year.
+     * @return Year
+     */
+    public int getYear() {
+        return this.year;
+    }
 
     /**
      * This method validates the date for the constructor.
-     * Years valid only between 1800 to CURRENT_YEAR.
-     * Months valid only between 1 - 12.
+     * Years valid only between {@value MIN_YEAR} to {@value CURRENT_YEAR}.
+     * Months valid only between {@value JANUARY} - {@value DECEMBER}.
      * Valid days according to months.
      *
      * @param day   Day
@@ -127,8 +151,11 @@ public class Date {
 
         // Check for February
         if (month == FEBRUARY) {
-            boolean leapYear = isLeapYear(year);
-            int maxDays = leapYear ? FEB_LEAP : FEB_NON_LEAP;
+            final boolean leapYear;
+            final int maxDays;
+            
+            leapYear = isLeapYear(year);
+            maxDays = leapYear ? FEB_LEAP : FEB_NON_LEAP;
             if (day > maxDays) {
                 throw new IllegalArgumentException("Invalid Day: " + day +
                         " for February in " + (leapYear ? "a leap year." : "a non-leap year."));
@@ -158,33 +185,9 @@ public class Date {
      * @return true or false
      */
     private static boolean isLeapYear (final int year) {
-        return ((year % FOUR_YEARS == ZERO_REMAINDER) &&
+        return ((year % LEAP_YEAR_DIVISOR == ZERO_REMAINDER) &&
                 (year % HUNDRED_YEARS != ZERO_REMAINDER) ||
                 (year % FOUR_HUNDRED_YEARS == ZERO_REMAINDER));
-    }
-
-    /**
-     * Getter method for day.
-     * @return Day
-     */
-    public int getDay() {
-        return this.day;
-    }
-
-    /**
-     * Getter method for month.
-     * @return Month
-     */
-    public int getMonth() {
-        return this.month;
-    }
-
-    /**
-     * Getter method for Year.
-     * @return Year
-     */
-    public int getYear() {
-        return this.year;
     }
 
     /**
@@ -231,26 +234,34 @@ public class Date {
      * step 7: 37%7 = 2; 2 means monday
      * </p>
      *
-     * The algorithm works for dates between 1800 and CURRENT_YEAR.
+     * The algorithm works for dates between {@value MIN_YEAR} and {@value CURRENT_YEAR}.
      * @return String representing the day of the week (e.g., "Monday").
      */
     public String getDayOfTheWeek() {
+        
+        int centuryAdjustment;
+        int lastTwoDigitsOfYear;
+        int twelves;
+        int remainder;
+        int fours;
+        int total;
+        int dayOfWeekCode;
 
         // Step 0: Add a century-specific value
-        int centuryAdjustment = getCenturyAdjustment(year);
+        centuryAdjustment = getCenturyAdjustment(year);
 
         // Step 1: Calculate the number of twelves in the last two digits of the year
-        int lastTwoDigitsOfYear = year % HUNDRED_YEARS;
-        int twelves = lastTwoDigitsOfYear / TWELVES_DIVISOR;
+        lastTwoDigitsOfYear = year % HUNDRED_YEARS;
+        twelves = lastTwoDigitsOfYear / TWELVES_DIVISOR;
 
         // Step 2: Calculate the remainder from the number of twelves
-        int remainder = lastTwoDigitsOfYear % TWELVES_DIVISOR;
+        remainder = lastTwoDigitsOfYear % TWELVES_DIVISOR;
 
         // Step 3: Calculate the number of fours in the remainder
-        int fours = remainder / FOURS_DIVISOR;
+        fours = remainder / FOURS_DIVISOR;
 
         // Step 4: Add the day of the month to the previous values
-        int total = day + twelves + remainder + fours;
+        total = day + twelves + remainder + fours;
 
         // Step 5: Add the month code
         total += getMonthCode(month);
@@ -264,7 +275,7 @@ public class Date {
         total += centuryAdjustment;
 
         // Step 7: Modulo the total by 7 to get the day of the week
-        int dayOfWeekCode = total % MODULO_DIVISOR;
+        dayOfWeekCode = total % MODULO_DIVISOR;
 
         // Return the day of the week based on the calculated code
         return getDayName(dayOfWeekCode);
@@ -272,7 +283,7 @@ public class Date {
 
     /**
      * Helper method to get the month code.
-     * @param month The month number (1-12)
+     * @param month The month number
      * @return The corresponding month code.
      */
     private static int getMonthCode(final int month) {
@@ -357,7 +368,20 @@ public class Date {
      */
     @Override
     public String toString(){
-        return this.getMonthString() + " " + this.day + ", " + this.year;
+        final StringBuilder sb;
+        final String        string;
+        
+        sb = new StringBuilder();
+        
+        sb.append(this.getMonthString());
+        sb.append(" ");
+        sb.append(this.getDay());
+        sb.append(", ");
+        sb.append(this.getYear());
+        
+        string = sb.toString();
+        
+        return string;
     }
 
 }

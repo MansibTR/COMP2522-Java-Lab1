@@ -33,7 +33,7 @@ public class BankAccount {
     /**
      * Constructor method for BankAccount class.
      *
-     * @param clientID Account number (6 or 7 characters).
+     * @param clientID Account number ({@value ACC_MIN_NUMBER} or {@value ACC_MAX_NUMBER} characters).
      * @param accountOpened The date when the account was opened.
      * @param accountClosed The date when the account was closed (if any).
      * @param client Client who owns the account.
@@ -56,7 +56,7 @@ public class BankAccount {
 
     /**
      * Overloaded Constructor for accounts which are not closed.
-     * @param clientID Account number (6 or 7 characters).
+     * @param clientID Account number ({@value ACC_MIN_NUMBER} or {@value ACC_MAX_NUMBER} characters).
      * @param accountOpened The date when the account was opened.
      * @param client Client who owns the account.
      * @param balanceUSD Balance amount in USD.
@@ -69,16 +69,17 @@ public class BankAccount {
     }
 
     /**
-     * Checks if the account number is valid (6 or 7 characters).
+     * Checks if the account number is valid ({@value ACC_MIN_NUMBER} or {@value ACC_MAX_NUMBER} characters).
      *
      * @param clientID The account number to validate.
-     * @throws IllegalArgumentException if null, less than 6 or more than 7 characters.
+     * @throws IllegalArgumentException if null, less than  or more than {@value ACC_MAX_NUMBER} characters.
      */
     private static void validateClientID(final String clientID) {
         if (clientID == null ||
                 clientID.length() < ACC_MIN_NUMBER ||
                 clientID.length() > ACC_MAX_NUMBER) {
-            throw new IllegalArgumentException("Account number must be 6 or 7 characters.");
+            throw new IllegalArgumentException("Account number must be" + ACC_MIN_NUMBER +
+                                                       "or" + ACC_MAX_NUMBER + "characters.");
         }
     }
 
@@ -131,7 +132,10 @@ public class BankAccount {
      * @return A string containing the details of the account.
      */
     public String getDetails() {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb;
+        final String        details;
+        
+        sb = new StringBuilder();
 
         sb.append(client.getName().getFullName());
         sb.append(" had $");
@@ -153,7 +157,8 @@ public class BankAccount {
             sb.append(" and is still open.");
         }
 
-        return sb.toString();
+        details = sb.toString();
+        return details;
     }
 
 }

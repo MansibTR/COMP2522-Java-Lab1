@@ -36,11 +36,28 @@ public class Name {
         this.first  = first;
         this.last   = last;
     }
+    
+    
+    /**
+     * Getter method for first name.
+     * @return First Name
+     */
+    public String getFirst() {
+        return this.first;
+    }
+    
+    /**
+     * Getter method for last name.
+     * @return Last Name
+     */
+    public String getLast() {
+        return this.last;
+    }
 
     /**
      * This method validates a name.
 
-     * Names cannot be null, blank, more than 45 characters long,
+     * Names cannot be null, blank, more than {@value MAX_CHARS} characters long,
      * or contain the word "admin" (in any letter case).
 
      * @param name The Name to validate.
@@ -63,22 +80,6 @@ public class Name {
      */
     private static boolean containsAdmin(final String name) {
         return name.toLowerCase().contains("admin");
-    }
-
-    /**
-     * Getter method for first name.
-     * @return First Name
-     */
-    public String getFirst() {
-        return this.first;
-    }
-
-    /**
-     * Getter method for last name.
-     * @return Last Name
-     */
-    public String getLast() {
-        return this.last;
     }
 
     /**
@@ -107,14 +108,19 @@ public class Name {
      * @return Reversed Full Name
      */
     public String getReverseName() {
-        StringBuilder str = new StringBuilder();
+        final StringBuilder str;
+        final String        reversedString;
+        
+        str = new StringBuilder();
 
         str.append(first);
         str.append(" ");
         str.append(last);
         str.reverse();
 
-        return str.toString();
+        reversedString = str.toString();
+        
+        return reversedString;
     }
 
     /**
@@ -123,7 +129,18 @@ public class Name {
      */
     @Override
     public String toString(){
-        return this.first + " " + this.last;
+        final StringBuilder sb;
+        final String        string;
+        
+        sb = new StringBuilder();
+        
+        sb.append(this.getFirst());
+        sb.append(" ");
+        sb.append(this.getLast());
+        
+        string = sb.toString();
+        
+        return string;
     }
 
 }

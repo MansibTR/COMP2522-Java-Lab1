@@ -45,6 +45,31 @@ public class Person {
     public Person(final Name name, final Date birthDate) {
         this(name, birthDate, null);
     }
+    
+    
+    /**
+     * Getter method for Name
+     * @return Name
+     */
+    public Name getName() {
+        return this.name;
+    }
+    
+    /**
+     * Getter method for Birth Date
+     * @return Birth Date
+     */
+    public Date getBirthDate() {
+        return this.birthDate;
+    }
+    
+    /**
+     * Getter method for Death Date
+     * @return Death Date
+     */
+    public Date getDeathDate() {
+        return this.deathDate;
+    }
 
     /**
      * This method validates the details of a person.
@@ -64,46 +89,36 @@ public class Person {
             throw new IllegalArgumentException("Person must have a birthdate.");
         }
     }
-
+    
     /**
-     * Getter method for Name
-     * @return Name
+     * Returns true if the person is alive (no deathDate).
+     * @return living status
      */
-    public Name getName() {
-        return name;
+    public boolean isAlive() {
+        return (getDeathDate() == null);
     }
-
-    /**
-     * Getter method for Birth Date
-     * @return Birth Date
-     */
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    /**
-     * Getter method for Death Date
-     * @return Death Date
-     */
-    public Date getDeathDate() {
-        return deathDate;
-    }
-
+    
     /**
      * This method returns the details of a person in the exact format of
+     *
+     * <p>
      * "Tiger Woods (alive) was born on tuesday, December 30, 1975!"
      * or
      * “Albert Einstein (died monday, April 18, 1955) was born on friday, March 14, 1879!”.
+     *</p>
      *
      * @return Details
      */
     public String getDetails() {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb;
+        final String        details;
+        
+        sb = new StringBuilder();
 
         sb.append(name.getFullName());
         sb.append(" ");
 
-        if (deathDate == null) {
+        if (isAlive()) {
             sb.append("(alive) ");
         } else {
             sb.append("(died ");
@@ -118,7 +133,9 @@ public class Person {
         sb.append(", ");
         sb.append(birthDate);
         sb.append("!");
+        
+        details = sb.toString();
 
-        return sb.toString();
+        return details;
     }
 }
